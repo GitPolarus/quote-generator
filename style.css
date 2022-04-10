@@ -145,27 +145,4 @@ button:active {
     justify-content: space-evenly;
     row-gap: 10px;
   }
-
-  body {
-    height: 100%;
-    margin: 10px;
-    /* position: fixed; */
-    /* overflow-y: auto; */
-  }
-
-  button {
-    font-size: 0.9rem;
-    height: 2rem;
-  }
-
-  /* .quote-text {
-    font-size: 2rem;
-  }
-
-  .quote-author {
-    font-size: 1.5rem;
-  }
-  .long-quote {
-    font-size: 1.5rem;
-  } */
 }
