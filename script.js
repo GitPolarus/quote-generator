@@ -2,6 +2,7 @@ const quoteContainer = document.getElementById("quote-container");
 const quoteText = document.getElementById("quote");
 const auhtorText = document.getElementById("author");
 const twitterBtn = document.getElementById("twitter");
+const shareBtn = document.getElementById("share");
 const newQuoteBtn = document.getElementById("new-quote");
 const loader = document.getElementById("loader");
 let quotes = [];
@@ -34,6 +35,26 @@ function tweetQuote() {
   window.open(twitterUrl, "_blank");
 }
 
+function shareQutote() {
+  if (navigator.share) {
+    navigator
+      .share({
+        title: "Quote of the Day",
+        text: `${quoteText.textContent} \n
+       ${auhtorText.textContent}`,
+        url: "https://gitpolarus.github.io/quote-generator/",
+      })
+      .then(function () {
+        // success
+        console.log("Article shared");
+      })
+      .catch(function (e) {
+        // error message
+        console.log(e.message);
+      });
+  }
+}
+
 async function getQuotes() {
   loading();
   const apiUrl = "https://type.fit/api/quotes";
@@ -46,6 +67,7 @@ async function getQuotes() {
 
 newQuoteBtn.addEventListener("click", newQuote);
 twitterBtn.addEventListener("click", tweetQuote);
+shareBtn.addEventListener("click", shareQutote);
 
 // OnLoad
 getQuotes();
