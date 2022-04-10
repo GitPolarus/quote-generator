@@ -16,7 +16,10 @@ body {
     #000428,
     #004e92
   );  */
-  background: linear-gradient(to top, #141e30, #243b55);
+  /* background: url("https://source.unsplash.com/random?nature"); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background: linear-gradient(to top, #141e30, #243b55); */
 }
 
 .quote-container {
@@ -98,10 +101,18 @@ button:active {
   color: rgb(255, 255, 255);
   border-radius: 10px;
   padding: 10px;
+  /* background: url("https://source.unsplash.com/random"); */
 }
 
 .to-shoot > .quote-text {
   color: #fff;
+}
+
+.to-shoot > .quote-text::before {
+  content: "«";
+}
+.to-shoot > .quote-text::after {
+  content: "»";
 }
 
 .to-shoot > .quote-author {

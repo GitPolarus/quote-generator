@@ -1,3 +1,4 @@
+const body = document.querySelector("body");
 const quoteContainer = document.getElementById("quote-container");
 const quoteText = document.getElementById("quote");
 const quoteIcon = document.getElementById("quote-left");
@@ -17,13 +18,16 @@ function loading() {
 
 function complete() {
   loader.hidden = true;
-  quoteIcon.hidden = false;
+  // quoteIcon.hidden = false;
 
   // quoteContainer.style.display = "flex";
   // quoteContainer.hidden = false;
 }
 
 function newQuote() {
+  body.style.background = "url('https://source.unsplash.com/random?nature')";
+  body.style.backgroundSize = "cover";
+  body.style.backgroundRepeat = "no-repeat";
   loading();
   const quote = quotes[Math.floor(Math.random() * quotes.length)];
   auhtorText.textContent = quote.author ? quote.author : "Inconnu";
