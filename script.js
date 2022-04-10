@@ -97,8 +97,25 @@ async function getQuotes() {
 newQuoteBtn.addEventListener("click", newQuote);
 twitterBtn.addEventListener("click", tweetQuote);
 shareBtn.addEventListener("click", shareQutote);
-shootBtn.addEventListener("click", takeshot);
+shootBtn.addEventListener("click", shareCanvas);
 
 // OnLoad
 getQuotes();
 // loading();
+
+async function shareCanvas() {
+  const shoot = document.getElementById("to-shoot");
+  const canvasElement = await html2canvas(shoot);
+  const dataUrl = canvasElement.toDataURL();
+  const blob = await (await fetch(dataUrl)).blob();
+  const filesArray = [
+    new File([blob], "quote.png", {
+      type: blob.type,
+      lastModified: new Date().getTime(),
+    }),
+  ];
+  const shareData = {
+    files: filesArray,
+  };
+  navigator.share(shareData);
+}
