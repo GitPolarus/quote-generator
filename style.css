@@ -99,10 +99,15 @@ button:active {
 
 @media only screen and (max-width: 1000px) {
   .quote-container {
+    display: flex;
+    gap: 35px;
+    flex-flow: column;
     margin: auto 10px;
+    /* height: 42vh; */
+    width: 75vw;
   }
 
   .quote-text {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 }
