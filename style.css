@@ -147,8 +147,10 @@ button:active {
   }
 
   body {
-    /* height: 100%; */
+    height: 100%;
     margin: 10px;
+    /* position: fixed; */
+    /* overflow-y: auto; */
   }
 
   button {
@@ -156,7 +158,7 @@ button:active {
     height: 2rem;
   }
 
-  .quote-text {
+  /* .quote-text {
     font-size: 2rem;
   }
 
@@ -165,5 +167,5 @@ button:active {
   }
   .long-quote {
     font-size: 1.5rem;
-  }
+  } */
 }
