@@ -40,7 +40,7 @@ function shareQutote() {
     navigator
       .share({
         title: document.title,
-        text: `${quoteText.textContent} - ${auhtorText.textContent}`,
+        text: `" ${quoteText.textContent} " \n ${auhtorText.textContent}\n`,
         url: document.location.href,
       })
       .then(function () {
