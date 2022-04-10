@@ -1,20 +1,26 @@
 const quoteContainer = document.getElementById("quote-container");
 const quoteText = document.getElementById("quote");
+const quoteIcon = document.getElementById("quote-left");
 const auhtorText = document.getElementById("author");
 const twitterBtn = document.getElementById("twitter");
 const shareBtn = document.getElementById("share");
+const shootBtn = document.getElementById("shoot");
 const newQuoteBtn = document.getElementById("new-quote");
 const loader = document.getElementById("loader");
 let quotes = [];
 
 function loading() {
   loader.hidden = false;
-  quoteContainer.hidden = true;
+  // quoteText.hidden = true;
+  // quoteContainer.style.display = "none";
 }
 
 function complete() {
   loader.hidden = true;
-  quoteContainer.hidden = false;
+  quoteIcon.hidden = false;
+
+  // quoteContainer.style.display = "flex";
+  // quoteContainer.hidden = false;
 }
 
 function newQuote() {
@@ -30,6 +36,13 @@ function newQuote() {
   complete();
 }
 
+function setBackGround() {
+  fetch("https://random.imagecdn.app/500/150").then((res) => {
+    console.log(res.url);
+    quoteContainer.style.backgroundImage = res.url;
+  });
+}
+
 function tweetQuote() {
   const twitterUrl = `https://twitter.com/intent/tweet?text=${quoteText.textContent} - ${auhtorText.textContent}`;
   window.open(twitterUrl, "_blank");
@@ -43,15 +56,26 @@ function shareQutote() {
         text: `" ${quoteText.textContent} " \n ${auhtorText.textContent}\n`,
         url: document.location.href,
       })
-      .then(function () {
-        // success
-        // console.log("Article shared");
-      })
+      .then(function () {})
       .catch(function (e) {
         // error message
         console.log(e.message);
       });
   }
+}
+
+function takeshot() {
+  const div = document.getElementById("to-shoot");
+  html2canvas(div).then(function (canvas) {
+    // document.getElementById("output").appendChild(canvas);
+    canvas.getContext("2d");
+    const link = document.createElement("a");
+
+    link.download = "quote.png";
+    link.href = canvas.toDataURL();
+    link.click();
+    link.delete;
+  });
 }
 
 async function getQuotes() {
@@ -67,6 +91,7 @@ async function getQuotes() {
 newQuoteBtn.addEventListener("click", newQuote);
 twitterBtn.addEventListener("click", tweetQuote);
 shareBtn.addEventListener("click", shareQutote);
+shootBtn.addEventListener("click", takeshot);
 
 // OnLoad
 getQuotes();

@@ -14,13 +14,15 @@
     <!-- quote -->
     <div class="quote-container" id="quote-container">
       <!-- quote-text -->
-      <div class="quote-text">
-        <i class="fas fa-quote-left"></i>
-        <span id="quote" class="quote"></span>
-      </div>
-      <!-- Author -->
-      <div class="quote-author">
-        <span id="author"></span>
+      <div id="to-shoot">
+        <div class="quote-text">
+          <!-- <i class="fas fa-quote-left"></i> -->
+          <q> <span id="quote" class="quote"></span> </q>
+        </div>
+        <!-- Author -->
+        <div class="quote-author">
+          <span id="author"></span>
+        </div>
       </div>
       <!-- Button -->
       <div class="button-container">
@@ -30,11 +32,16 @@
         <button class="share-button" id="share" title="Share this!">
           <i class="fas fa-share-nodes"></i>
         </button>
+        <button class="shoot-button" id="shoot" title="Shoot this!">
+          <i class="fas fa-camera"></i>
+        </button>
         <button id="new-quote">New Quote</button>
       </div>
     </div>
     <div class="loader" id="loader"></div>
     <!-- script -->
+    <!-- Include from the CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.5/dist/html2canvas.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>
