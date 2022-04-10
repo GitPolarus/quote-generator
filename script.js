@@ -39,14 +39,13 @@ function shareQutote() {
   if (navigator.share) {
     navigator
       .share({
-        title: "Quote of the Day",
-        text: `${quoteText.textContent} \n
-       ${auhtorText.textContent}`,
-        url: "https://gitpolarus.github.io/quote-generator/",
+        title: document.title,
+        text: `${quoteText.textContent} - ${auhtorText.textContent}`,
+        url: document.location.href,
       })
       .then(function () {
         // success
-        console.log("Article shared");
+        // console.log("Article shared");
       })
       .catch(function (e) {
         // error message
