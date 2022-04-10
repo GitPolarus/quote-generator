@@ -147,7 +147,7 @@ button:active {
   }
 
   body {
-    height: 100%;
+    /* height: 100%; */
     margin: 10px;
   }
 
@@ -160,6 +160,9 @@ button:active {
     font-size: 2rem;
   }
 
+  .quote-author {
+    font-size: 1.5rem;
+  }
   .long-quote {
     font-size: 1.5rem;
   }
