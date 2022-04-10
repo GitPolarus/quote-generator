@@ -105,6 +105,7 @@ getQuotes();
 
 async function shareCanvas() {
   const shoot = document.getElementById("to-shoot");
+  shoot.classList.add("to-shoot");
   const canvasElement = await html2canvas(shoot);
   const dataUrl = canvasElement.toDataURL();
   const blob = await (await fetch(dataUrl)).blob();
@@ -118,4 +119,5 @@ async function shareCanvas() {
     files: filesArray,
   };
   navigator.share(shareData);
+  div.classList.remove("to-shoot");
 }
