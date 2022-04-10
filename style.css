@@ -133,23 +133,34 @@ button:active {
 @media only screen and (max-width: 1000px) {
   .quote-container {
     display: flex;
-    gap: 35px;
+    gap: 20px;
     flex-flow: column;
     margin: auto 10px;
     /* height: 42vh; */
     width: 75vw;
   }
 
+  .button-container {
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    row-gap: 10px;
+  }
+
   body {
     height: 100%;
-    margin: 0;
+    margin: 10px;
   }
 
   button {
     font-size: 0.9rem;
     height: 2rem;
   }
+
   .quote-text {
-    font-size: 3rem;
+    font-size: 2rem;
+  }
+
+  .long-quote {
+    font-size: 1.5rem;
   }
 }

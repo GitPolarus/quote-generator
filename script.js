@@ -119,5 +119,5 @@ async function shareCanvas() {
     files: filesArray,
   };
   navigator.share(shareData);
-  div.classList.remove("to-shoot");
+  shoot.classList.remove("to-shoot");
 }
