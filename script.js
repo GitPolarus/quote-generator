@@ -66,6 +66,7 @@ function shareQutote() {
 
 function takeshot() {
   const div = document.getElementById("to-shoot");
+  div.classList.add("to-shoot");
   html2canvas(div).then(function (canvas) {
     // document.getElementById("output").appendChild(canvas);
     canvas.getContext("2d");
@@ -76,6 +77,7 @@ function takeshot() {
     link.click();
     link.delete;
   });
+  div.classList.remove("to-shoot");
 }
 
 async function getQuotes() {
