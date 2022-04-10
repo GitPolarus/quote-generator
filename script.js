@@ -97,7 +97,7 @@ async function getQuotes() {
 newQuoteBtn.addEventListener("click", newQuote);
 twitterBtn.addEventListener("click", tweetQuote);
 shareBtn.addEventListener("click", shareQutote);
-shootBtn.addEventListener("click", shareCanvas);
+shootBtn.addEventListener("click", takeshot);
 
 // OnLoad
 getQuotes();

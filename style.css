@@ -145,4 +145,13 @@ button:active {
     justify-content: space-evenly;
     row-gap: 10px;
   }
+
+  body {
+    height: 100%;
+    padding: 10px;
+  }
+
+  .long-quote {
+    font-size: 2rem;
+  }
 }
